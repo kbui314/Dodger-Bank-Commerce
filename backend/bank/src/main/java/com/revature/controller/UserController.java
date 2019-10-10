@@ -3,6 +3,7 @@ package com.revature.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,10 @@ public class UserController {
 	public User login(@PathVariable("username")String userName, @PathVariable("password")String password) {
 		
 		return null;
+	}
+	
+	@PostMapping("/signup")
+	public void signup(User user) {
+		userService.signup(user);
 	}
 }
